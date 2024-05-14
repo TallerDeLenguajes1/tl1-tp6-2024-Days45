@@ -4,7 +4,6 @@ int a;
 int b;
 a=10;
 b=a;
+Console.WriteLine("Valor de a:"+a);
 
-console.WriteLine("Valor de a:"+a);
-
-console.WriteLine("Valor de b:"+b);
+Console.WriteLine("Valor de b:"+a);
