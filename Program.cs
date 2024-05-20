@@ -1,9 +1,8 @@
-﻿Console.WriteLine("Hello, World!");
+﻿/*Console.WriteLine("Hello, World!");
 int a = 10;
 int b = a;
 Console.WriteLine("Valor de a:" + a);
 Console.WriteLine("Valor de b:" + b);
-
 Console.Write("Por favor, ingrese un numero: ");
 string num = Console.ReadLine();
 if (double.TryParse(num, out double number))
@@ -26,7 +25,7 @@ if (double.TryParse(num, out double number))
 else
 {
     Console.WriteLine("El texto ingresado no es un numero.");
-}
+}*/
 /*
 Ejercicio 2. Ingrese al branch CalculadoraV1 y construya un programa que sea una
 calculadora que permita al usuario realizar las 4 operaciones básicas (Sumar, Restar,
@@ -42,12 +41,13 @@ while (siguiente)
     Console.WriteLine("2. Restar");
     Console.WriteLine("3. Multiplicar");
     Console.WriteLine("4. Dividir");
-
     string opcion = Console.ReadLine();
+
     Console.WriteLine("Ingrese el primer numero. ");
     string num1Text = Console.ReadLine();
     Console.WriteLine("Ingrese el segundo numero. ");
     string num2Text = Console.ReadLine();
+
     int num1=int.Parse(num1Text);
     int num2=int.Parse(num2Text);//Este método intenta convertir una cadena de texto a un número.
     switch (opcion)
