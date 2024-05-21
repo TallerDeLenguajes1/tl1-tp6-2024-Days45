@@ -1,4 +1,4 @@
-﻿/*Console.WriteLine("Hello, World!");
+﻿/**Console.WriteLine("Hello, World!");
 int a = 10;
 int b = a;
 Console.WriteLine("Valor de a:" + a);
@@ -34,47 +34,60 @@ pida dos números y que devuelva el resultado de la operación seleccionada. Ade
 una vez que termine de realizar la operación le pregunte si desea realizar otro cálculo.
 */
 bool siguiente = true;
+bool acertado;
+string opcion, num1Text, num2Text;
+int opciones;
+double num1, num2;
+
 while (siguiente)
 {
-    Console.WriteLine("Seleccione una opcion. ");
+    Console.WriteLine("(Calculadora V1)");
+    Console.WriteLine("Seleccione una opcion.");
     Console.WriteLine("1. Sumar");
     Console.WriteLine("2. Restar");
     Console.WriteLine("3. Multiplicar");
     Console.WriteLine("4. Dividir");
-    string opcion = Console.ReadLine();
 
-    Console.WriteLine("Ingrese el primer numero. ");
-    string num1Text = Console.ReadLine();
-    Console.WriteLine("Ingrese el segundo numero. ");
-    string num2Text = Console.ReadLine();
+    opcion = Console.ReadLine();
+    bool esNumeroValido = int.TryParse(opcion, out opciones);
 
-    int num1=int.Parse(num1Text);
-    int num2=int.Parse(num2Text);//Este método intenta convertir una cadena de texto a un número.
-    switch (opcion)
+    if (opciones >= 1 && opciones <= 4)
     {
-        case "1":
-            Console.WriteLine($"La suma es: {num1+num2}");
-            break;
-        case "2":
-            Console.WriteLine($"La resta es: {num1 - num2}");
-            break;
-        case "3":
-            Console.WriteLine($"El producto es: {num1*num2}");
-            break;
-        case "4":
-            if (num2 != 0)
+        Console.WriteLine("Ingrese el primer numero.");
+        num1Text = Console.ReadLine();
+        Console.WriteLine("Ingrese el segundo numero.");
+        num2Text = Console.ReadLine();
+        acertado= double.TryParse(num1Text, out num1);
+        acertado=double.TryParse(num2Text, out num2) == acertado;
+
+        if (acertado)
+        {
+            switch (opciones)
             {
-                Console.WriteLine($"La division es: {num1/num2}");
-            }else{
-                Console.WriteLine("No se puede dividir por cero.");
+                case 1:
+                    Console.WriteLine($"La suma es: {num1 + num2}");
+                    break;
+                case 2:
+                    Console.WriteLine($"La resta es: {num1 - num2}");
+                    break;
+                case 3:
+                    Console.WriteLine($"El producto es: {num1*num2}");
+                    break;
+                case 4:
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine($"La division es: {num1 / num2}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se puede dividir por cero.");
+                    }
+                    break;
             }
-            
-            break;
-        default:
-            Console.WriteLine("Opcion no valida. ");
-            break;
+        }
     }
+
     Console.WriteLine("Desea seguir? (s:si/n:no)");
-    string respuesta= Console.ReadLine();
-    siguiente= respuesta.ToLower() == "s";
+    string respuesta = Console.ReadLine();
+    siguiente = respuesta.ToLower() == "s";
 }
