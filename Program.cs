@@ -30,7 +30,7 @@ else
 */
 
 bool siguiente = true, numValido, opcionValida;
-string? opcion;
+string opcion;
 int opciones;
 double num;
 while (siguiente)
@@ -67,6 +67,19 @@ while (siguiente)
                     break;
                     case 6:Console.WriteLine($"La parte entera de {num} es {(int)num}");
                     break;
+                }
+                Console.WriteLine("Ingrese el primer numero.");
+                string leer=Console.ReadLine();
+                bool valido = double.TryParse(leer, out double numero1);
+                Console.WriteLine("Ingrese el segundo numero.");
+                leer=Console.ReadLine();
+                valido=double.TryParse(leer,out double numero2 )&&valido;
+                if (valido){
+                    Console.WriteLine("Los numeros ingresados son validos, entonces...");
+                    Console.WriteLine($"El maximo es {Math.Max(numero1,numero2)}");
+                    Console.WriteLine($"El minimo es {Math.Min(numero1,numero2)}");
+                }else{
+                    Console.WriteLine("Alguno de los dos valores ingresados no son numeros.");
                 }
             }
             else
