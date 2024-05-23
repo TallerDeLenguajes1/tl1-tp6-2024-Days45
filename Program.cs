@@ -1,5 +1,4 @@
-﻿/**
-Console.WriteLine("Hello, World!");
+﻿/**Console.WriteLine("Hello, World!");
 int a = 10;
 int b = a;
 Console.WriteLine("Valor de a:" + a);
@@ -174,4 +173,7 @@ while (siguiente)
     {
         Console.WriteLine("Entrada invalida. Intente de nuevo.");
     }
+     Console.WriteLine("Desea seguir? (s:si/n:no)");
+    string respuesta = Console.ReadLine();
+    siguiente = respuesta.ToLower() == "s";
 }
